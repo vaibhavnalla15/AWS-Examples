@@ -1,0 +1,21 @@
+#!/bin/bash
+
+BUCKET_NAME=$1
+REGION="us-east-1"
+
+if [ -z "$BUCKET_NAME" ]; then
+  echo "Usage: $0 <bucket-name>"
+  exit 1
+fi
+
+aws s3api create-bucket \
+  --bucket "$BUCKET_NAME" \
+  --region "$REGION" \
+  --output text 
+
+# shellcheck disable=SC2181
+if [ $? -eq 0 ]; then
+  echo "Bucket created successfully"
+else
+  echo "Bucket creation failed"
+fi

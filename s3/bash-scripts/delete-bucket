@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Check if bucket name is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <bucket-name>"
+fi
+
+BUCKET_NAME=$1
+
+echo "Deleting S3 bucket: $BUCKET_NAME"
+
+# Remove all objects in the bucket (required before deletion)
+aws s3 rm "s3://$BUCKET_NAME" --recursive
+
+# Delete the bucket
+aws s3api delete-bucket --bucket "$BUCKET_NAME"
+
+# Check result
+# shellcheck disable=SC2181
+if [ $? -eq 0 ]; then
+    echo "Bucket deleted successfully"
+else
+    echo 'Bucket deletion failed.'
+fi
+    
