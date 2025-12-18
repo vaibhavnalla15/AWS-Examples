@@ -3,9 +3,6 @@ set -e
 echo "=====listing Buckets======"
 output=$(aws s3 ls) || { echo "Error: Failed to list S3 buckets. Check AWS credentials and permissions."; exit 1; }
 
-# or
-aws s3api list-buckets | jq -r '.Bucket | sort_by(.CreationDate) | reverse | .[0] | .Name'
-
 if [ -z "$output" ]; then
     echo "No S3 buckets are found. [Create one by running code ./create-bucket.sh <bucket-name>] "
 else
