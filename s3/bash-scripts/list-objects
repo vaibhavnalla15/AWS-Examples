@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if bucket name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <bucket-name>"
+  exit 1
+fi
+
+BUCKET_NAME=$1
+
+echo "Listing objects in bucket: $BUCKET_NAME"
+
+aws s3api list-objects-v2 \
+  --bucket "$BUCKET_NAME" \
+  --query "Contents[].Key" \
+  --output table # can be printed as table,yaml,etc.
+
+
