@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS S3 Static Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #232f3e;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to AWS S3 Static Website</h1>
+        <p>This website is hosted on Amazon S3.</p>
+        <p>Learn more about <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html" target="_blank">S3 static website hosting</a>.</p>
+        <h2>Features</h2>
+        <ul>
+            <li>Highly scalable and durable</li>
+            <li>Low latency with CloudFront</li>
+            <li>Cost-effective hosting solution</li>
+        </ul>
+        <script>      
+        fetch("https://cors-fun2-bucket.s3.amazonaws.com/test.txt")
+        .then(res => res.text())
+        .then(data => console.log("Data:", data))
+        .catch(err => console.error("CORS Error:", err));
+        </script>
+
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,4 @@
+This is simple test file for CORS configuration in S3.
+It contains sample text to verify cross-origin resource sharing settings.
+You can modify this file as needed for your testing purposes.   
+End of file.
