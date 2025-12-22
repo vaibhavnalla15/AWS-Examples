@@ -1,0 +1,17 @@
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "PUT",
+            "POST",
+            "DELETE"
+        ],
+        "AllowedOrigins": [
+            "https://cors-fun-bucket.s3.us-east-1.amazonaws.com/index.html"
+        ],
+        "ExposeHeaders": []
+    }
+]
