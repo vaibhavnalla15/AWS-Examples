@@ -45,3 +45,7 @@ terraform.rc
 
 # Ignore security files
 .ssh
+
+# Security key
+*.pem 
+*.ppk
