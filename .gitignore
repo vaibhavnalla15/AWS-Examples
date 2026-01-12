@@ -49,3 +49,4 @@ terraform.rc
 # Security key
 *.pem 
 *.ppk
+cfn-venv/
