@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+aws sqs delete-message \
+--queue-url https://sqs.us-east-1.amazonaws.com/321869098112/tf-queue \
+--receipt-handle "AQEBHsCrKs8apKPD2vrF4nrWzA8dd4JrnIkyOF3KF8btHc5pqhwA6Lf3zxsuSD4mDaytJcRATygiVhX9CxwTpORcS2ajyVTg0bbxV5v11VF8kgPV+RzBGCYKLZBBJjkf1VUHyurDRDUKgO2l01XuPjlWp5tTA4dHai+cFE+DpaeM0dMIMf/sfWUXMHDlcp4rV48FzkipxHlG9Qijh/QKyEyJf9Lc5vNxww+RFcNqYfMhxrjHlqrSvlLlOmYdksLsTpFwmJCoPuyxE9tlmx/UmVH1R6QiweMzHcuLsxfi3kz+M5Im3OEv1eoCfMonyMCgYv8un71mQpd6Afp3dmUEF4zXrMJEgMCNcoN7RuAuaJVGnzVCE9YJELbRs0cHvSJHX8UU"
